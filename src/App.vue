@@ -1,13 +1,13 @@
 <template>
-  <the-icons></the-icons>
+  <the-homepage></the-homepage>
 </template>
 
 <script>
-import TheIcons from "./TheIcons.vue";
+import TheHomepage from "./components/TheHomepage.vue";
 
 export default {
   components: {
-    TheIcons,
+    TheHomepage,
   },
 };
 </script>
