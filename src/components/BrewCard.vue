@@ -3,7 +3,7 @@
     <the-icons icon="infusion" icon-classes="w-10 h-16"></the-icons>
     <div class="pl-4 w-full">
       <h3 class="font-bold uppercase">beza</h3>
-      <p class="text-xs pb-2">Description</p>
+      <p class="text-xs pb-2 text-gray-500">Description</p>
       <div class="flex justify-between">
         <the-icons
           icon="bean"
