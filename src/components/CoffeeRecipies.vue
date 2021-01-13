@@ -9,27 +9,19 @@
   <main class="m-4">
     <section class="mb-16">
       <h2>Favorite Recipe</h2>
-      <brew-card
-        icon="aeropress"
-        title="AeroPress"
-        description="Description"
-        beans="16g"
-        water="230ml"
-        grind="Medium"
-        time="1 min"
-      ></brew-card>
+      <ul v-if="favorites.length > 0">
+        <li v-for="favorite in favorites" :key="favorite.id">
+          <brew-card v-bind="favorite"></brew-card>
+        </li>
+      </ul>
     </section>
     <section class="my-8">
       <h2>Try a new recipe</h2>
-      <brew-card
-        icon="french"
-        title="French Press"
-        description="Description"
-        beans="33g"
-        water="500ml"
-        grind="Coarse"
-        time="4 min"
-      ></brew-card>
+      <ul v-if="newRecipies.length > 0">
+        <li v-for="recipe in newRecipies" :key="recipe.id">
+          <brew-card v-bind="recipe"></brew-card>
+        </li>
+      </ul>
     </section>
   </main>
 </template>
@@ -37,10 +29,15 @@
 <script>
 import TheIcons from "./TheIcons.vue";
 import BrewCard from "./BrewCard.vue";
+import { mapGetters } from "vuex";
+
 export default {
   components: {
     TheIcons,
     BrewCard,
+  },
+  computed: {
+    ...mapGetters(["favorites", "newRecipies"]),
   },
   methods: {
     goBack() {

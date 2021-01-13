@@ -6,15 +6,11 @@
 
   <main class="mx-4">
     <h2 class="uppercase text-gray-400">Latest brews</h2>
-    <brew-card
-      icon="infusion"
-      title="Beza"
-      description="Description"
-      beans="40g"
-      water="500ml"
-      grind="Coarse"
-      time="12 timer"
-    ></brew-card>
+    <ul v-if="latestBrews.length > 0">
+      <li v-for="brew in latestBrews" :key="brew.id">
+        <brew-card v-bind="brew" :uppercase="true"></brew-card>
+      </li>
+    </ul>
     <router-link to="/pickCoffee"
       ><button class="brew-button">Brew a cup</button>
     </router-link>
@@ -22,6 +18,7 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 import TheIcons from "./TheIcons.vue";
 import BrewCard from "./BrewCard.vue";
 
@@ -29,6 +26,9 @@ export default {
   components: {
     TheIcons,
     BrewCard,
+  },
+  computed: {
+    ...mapGetters(["latestBrews"]),
   },
 };
 </script>

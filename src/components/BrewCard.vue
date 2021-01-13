@@ -2,8 +2,8 @@
   <section :class="`flex my-4 px-4 py-8 ${border ? 'border' : 'border-none'}`">
     <the-icons :icon="icon" :icon-classes="iconClasses"></the-icons>
     <div class="pl-4 w-full">
-      <h3 class="font-bold uppercase">{{ title }}</h3>
-      <p class="text-xs pb-2 text-gray-500">{{ description }}</p>
+      <h3 :class="`font-bold ${uppercase ? 'uppercase' : ''}`">{{ title }}</h3>
+      <p class="text-xs pb-2 text-gray-500">{{ by }}</p>
       <div class="flex justify-between">
         <the-icons
           icon="bean"
@@ -45,10 +45,12 @@ export default {
   components: {
     TheIcons,
   },
-  // props: ["icon", "title", "description", "beans", "water", "grind", "time"],
   props: {
     border: {
       default: true,
+      required: false,
+    },
+    uppercase: {
       required: false,
     },
     iconClasses: {
@@ -57,7 +59,9 @@ export default {
     },
     icon: String,
     title: String,
-    description: String,
+    by: {
+      required: false,
+    },
     beans: String,
     water: String,
     grind: String,

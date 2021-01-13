@@ -2,37 +2,49 @@
   <router-link to="/coffeeRecipies">
     <section class="border m-4 pl-8 pr-10 py-8">
       <div class="mb-4">
-        <h2 class="uppercase font-bold">Calahute alto</h2>
-        <h3 class="text-xs text-gray-500">Nordhavn Coffee</h3>
+        <h2 class="uppercase font-bold">{{ title }}</h2>
+        <h3 class="text-xs text-gray-500">{{ by }}</h3>
       </div>
       <div class="mb-8">
         <p class="text-gray-500 text-sm">
-          Very smooth with a full and round body accompanied by notes of dried
-          fruit and ripe banana, rounded by a mild acidity reminiscent of tart
-          fruit.
+          {{ description }}
         </p>
       </div>
       <div class="text-xs flex flex-wrap">
         <div class="coffee-info mb-4">
           <h4>Process</h4>
-          <p>Sun dried</p>
+          <p>{{ process }}</p>
         </div>
         <div class="coffee-info mb-4">
           <h4>Roast profile</h4>
-          <p>Medium</p>
+          <p>{{ roastProfile }}</p>
         </div>
         <div class="coffee-info">
           <h4>Varieties</h4>
-          <p>Castilo, Caturra</p>
+          <p>{{ varieties }}</p>
         </div>
         <div class="coffee-info">
           <h4>Country</h4>
-          <p>Guatemala</p>
+          <p>{{ country }}</p>
         </div>
       </div>
     </section>
   </router-link>
 </template>
+
+<script>
+export default {
+  props: [
+    "title",
+    "by",
+    "description",
+    "process",
+    "roastProfile",
+    "varieties",
+    "country",
+  ],
+};
+</script>
 
 <style scoped>
 h4 {
