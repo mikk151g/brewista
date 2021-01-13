@@ -1,8 +1,5 @@
 <template>
-  <the-homepage></the-homepage>
-  <pick-coffee></pick-coffee>
-  <coffee-recipies></coffee-recipies>
-  <recipe-guide></recipe-guide>
+  <router-view></router-view>
 </template>
 
 <script>

@@ -1,5 +1,6 @@
 <template>
   <the-icons
+    @goBack="goBack"
     icon="arrowBack"
     icon-classes="w-7 h-7 mr-4"
     wrapper-classes="flex mx-4 my-8"
@@ -40,6 +41,11 @@ export default {
   components: {
     TheIcons,
     BrewCard,
+  },
+  methods: {
+    goBack() {
+      return this.$router.go(-1);
+    },
   },
 };
 </script>

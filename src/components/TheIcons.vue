@@ -327,7 +327,7 @@
     <div :class="slotClasses">
       <slot name="beforeIcon"></slot>
     </div>
-    <svg :class="iconClasses">
+    <svg @click="goBack" :class="iconClasses">
       <use :xlink:href="'#' + icon" />
     </svg>
     <div :class="slotClasses">
@@ -348,6 +348,12 @@ export default {
     icon: String,
     slotClasses: {
       required: false,
+    },
+  },
+  emits: ["goBack"],
+  methods: {
+    goBack() {
+      this.$emit("goBack");
     },
   },
 };
