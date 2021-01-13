@@ -12,7 +12,7 @@
     </section>
     <section class="my-8">
       <h2>Try a new recipe</h2>
-      <brew-card><brew-card>
+      <brew-card></brew-card>
     </section>
   </main>
 </template>
