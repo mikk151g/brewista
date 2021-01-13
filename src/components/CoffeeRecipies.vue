@@ -7,17 +7,17 @@
     ><h1 class="font-semibold text-lg">How do you want to brew</h1></the-icons
   >
   <main class="m-4">
-    <section class="mb-16">
+    <section v-if="favorites.length > 0" class="mb-16">
       <h2>Favorite Recipe</h2>
-      <ul v-if="favorites.length > 0">
+      <ul>
         <li v-for="favorite in favorites" :key="favorite.id">
           <brew-card v-bind="favorite"></brew-card>
         </li>
       </ul>
     </section>
-    <section class="my-8">
+    <section v-if="newRecipies.length > 0" class="my-8">
       <h2>Try a new recipe</h2>
-      <ul v-if="newRecipies.length > 0">
+      <ul>
         <li v-for="recipe in newRecipies" :key="recipe.id">
           <brew-card v-bind="recipe"></brew-card>
         </li>
