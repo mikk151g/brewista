@@ -3,11 +3,11 @@
     :border="false"
     icon-classes="w-7 h-7"
     icon="arrowBack"
-    title="French Press"
-    beans="33g"
-    water="500ml"
-    grind="Coarse"
-    time="4 min"
+    :title="recipe.title"
+    :beans="recipe.beans"
+    :water="recipe.water"
+    :grind="recipe.grind"
+    :time="recipe.time"
   ></brew-card>
 
   <main class="m-4">
@@ -28,11 +28,21 @@
 <script>
 import TheIcons from "./TheIcons.vue";
 import BrewCard from "./BrewCard.vue";
+import { mapGetters } from "vuex";
 
 export default {
   components: {
     TheIcons,
     BrewCard,
+  },
+  props: ["id"],
+  computed: {
+    ...mapGetters(["favorites, newRecipies"]),
+    recipe() {
+      const recipies = this.newRecipies;
+      const recipe = recipies.find((x) => x.id === this.id);
+      return recipe;
+    },
   },
 };
 </script>

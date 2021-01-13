@@ -11,7 +11,14 @@
       <h2>Favorite Recipe</h2>
       <ul>
         <li v-for="favorite in favorites" :key="favorite.id">
-          <brew-card v-bind="favorite"></brew-card>
+          <router-link
+            :to="{
+              name: 'recipeDetails',
+              params: { id: favorite.id },
+            }"
+          >
+            <brew-card v-bind="favorite"></brew-card>
+          </router-link>
         </li>
       </ul>
     </section>
@@ -19,7 +26,14 @@
       <h2>Try a new recipe</h2>
       <ul>
         <li v-for="recipe in newRecipies" :key="recipe.id">
-          <brew-card v-bind="recipe"></brew-card>
+          <router-link
+            :to="{
+              name: 'recipeDetails',
+              params: { id: recipe.id },
+            }"
+          >
+            <brew-card v-bind="recipe"></brew-card>
+          </router-link>
         </li>
       </ul>
     </section>
@@ -29,6 +43,7 @@
 <script>
 import TheIcons from "./TheIcons.vue";
 import BrewCard from "./BrewCard.vue";
+import RecipeGuide from "./RecipeGuide.vue";
 import { mapGetters } from "vuex";
 
 export default {

@@ -22,9 +22,12 @@ const router = createRouter({
         {
             path: '/coffeeRecipies',
             component: CoffeeRecipies,
-            children: [
-                { path: ':id', component: RecipeGuide }
-            ]
+        },
+        {
+            path: '/:id',
+            name: 'recipeDetails',
+            component: RecipeGuide,
+            props: true
         }
     ],
     scrollBehavior(_, _2, savedPosition) {
