@@ -6,7 +6,15 @@
 
   <main class="mx-4">
     <h2 class="uppercase text-gray-400">Latest brews</h2>
-    <brew-card></brew-card>
+    <brew-card
+      icon="infusion"
+      title="Beza"
+      description="Description"
+      beans="40g"
+      water="500ml"
+      grind="Coarse"
+      time="12 timer"
+    ></brew-card>
     <button class="brew-button">Brew a cup</button>
   </main>
 </template>

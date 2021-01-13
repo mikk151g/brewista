@@ -1,37 +1,37 @@
 <template>
-  <section class="flex my-4 px-4 py-8 border">
-    <the-icons icon="infusion" icon-classes="w-10 h-16"></the-icons>
+  <section :class="`flex my-4 px-4 py-8 ${border ? 'border' : 'border-none'}`">
+    <the-icons :icon="icon" :icon-classes="iconClasses"></the-icons>
     <div class="pl-4 w-full">
-      <h3 class="font-bold uppercase">beza</h3>
-      <p class="text-xs pb-2 text-gray-500">Description</p>
+      <h3 class="font-bold uppercase">{{ title }}</h3>
+      <p class="text-xs pb-2 text-gray-500">{{ description }}</p>
       <div class="flex justify-between">
         <the-icons
           icon="bean"
           icon-classes="w-3 h-3 mr-1 text-gray-400"
           wrapper-classes="w-auto flex items-center"
           slot-classes="text-xs text-gray-400"
-          >40g</the-icons
+          >{{ beans }}</the-icons
         >
         <the-icons
           icon="water"
           icon-classes="w-3 h-3 mr-1 text-gray-400"
           wrapper-classes="flex items-center"
           slot-classes="text-xs text-gray-400"
-          >500ml</the-icons
+          >{{ water }}</the-icons
         >
         <the-icons
           icon="grind"
           icon-classes="w-3 h-3 mr-1 text-gray-400"
           wrapper-classes="flex items-center"
           slot-classes="text-xs text-gray-400"
-          >Coarse</the-icons
+          >{{ grind }}</the-icons
         >
         <the-icons
           icon="time"
           icon-classes="w-3 h-3 mr-1 text-gray-400"
           wrapper-classes="flex items-center"
           slot-classes="text-xs text-gray-400"
-          >12 timer</the-icons
+          >{{ time }}</the-icons
         >
       </div>
     </div>
@@ -44,6 +44,24 @@ import TheIcons from "./TheIcons.vue";
 export default {
   components: {
     TheIcons,
+  },
+  // props: ["icon", "title", "description", "beans", "water", "grind", "time"],
+  props: {
+    border: {
+      default: true,
+      required: false,
+    },
+    iconClasses: {
+      default: "w-10 h-16",
+      required: false,
+    },
+    icon: String,
+    title: String,
+    description: String,
+    beans: String,
+    water: String,
+    grind: String,
+    time: String,
   },
 };
 </script>

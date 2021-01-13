@@ -324,6 +324,9 @@
 
   <!-- Når en svg skal bruges kan du skrive følgende med en reference til det ID som den har -->
   <div :class="wrapperClasses">
+    <div :class="slotClasses">
+      <slot name="beforeIcon"></slot>
+    </div>
     <svg :class="iconClasses">
       <use :xlink:href="'#' + icon" />
     </svg>

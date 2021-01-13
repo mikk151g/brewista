@@ -8,11 +8,27 @@
   <main class="m-4">
     <section class="mb-16">
       <h2>Favorite Recipe</h2>
-      <brew-card></brew-card>
+      <brew-card
+        icon="aeropress"
+        title="AeroPress"
+        description="Description"
+        beans="16g"
+        water="230ml"
+        grind="Medium"
+        time="1 min"
+      ></brew-card>
     </section>
     <section class="my-8">
       <h2>Try a new recipe</h2>
-      <brew-card></brew-card>
+      <brew-card
+        icon="french"
+        title="French Press"
+        description="Description"
+        beans="33g"
+        water="500ml"
+        grind="Coarse"
+        time="4 min"
+      ></brew-card>
     </section>
   </main>
 </template>
